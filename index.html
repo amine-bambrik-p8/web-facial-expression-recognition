@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Facial Expression Recognition</title>
+  <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+  <script src="./build/tracking-min.js"></script>
+  <script src="./build/data/face.js"></script>
+  <script src="./build/data/eye.js"></script>
+  <script src="./build/data/mouth.js"></script>
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    canvas{
+        position: absolute;
+        z-index: 1;
+    }
+    #zoom-canvas{
+        display: none;
+        width:48px;
+        height:48px;
+        z-index: 3;
+    }
+    </style>
+</head>
+
+<body>
+
+  <video id="video" width="320" height="240" preload autoplay loop muted></video>
+  <canvas id="canvas" width="320" height="240"></canvas>
+  <canvas id="zoom-canvas"></canvas>
+  <script src="app.js">
+  </script>
+</body>
+
+</html>
