@@ -6,12 +6,12 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const zoomContext = zoom.getContext('2d');
 const sess = new onnx.InferenceSession();
-const loadingModelPromise = sess.loadModel("./vgg_onnx_model.onnx");
+const loadingModelPromise = sess.loadModel("./resnet_test_final_onnx_model.onnx");
 const classes = ["angry","disgust","fear","happy","neutral","sad","surprise"];
 
 
 const tracker = new tracking.ObjectTracker('face');
-tracker.setInitialScale(2);
+tracker.setInitialScale(4);
 tracker.setStepSize(2);
 tracker.setEdgesDensity(0.1);
 tracking.track(video, tracker, {
